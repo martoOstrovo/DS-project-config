@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   datasource:
     url: "{cipher}e4eb181f5cfe673ec7b58caade195ee3ee694d0d0086011c6904fea3020636ae0b3b1754559763656f970d2ff972a791"
@@ -14,5 +17,29 @@ spring:
     hibernate:
       ddl-auto: update
 
-server:
-  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8071/eureka/
+
+info:
+  app:
+    name: "user"
+    description: "user microservice"
+    version: "1.0.0"
