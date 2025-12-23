@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: "{cipher}e4eb181f5cfe673ec7b58caade195ee3ee694d0d0086011c6904fea3020636ae0b3b1754559763656f970d2ff972a791"
+    username: "{cipher}1ee73a94adec9a445dbe88ee6443d74e971197cbc1fad87a44e42e1369ad67d0"
+    password: ''
+    driver-class-name: org.h2.Driver
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8080
