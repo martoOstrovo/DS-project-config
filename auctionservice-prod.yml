@@ -1,0 +1,40 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: "{cipher}ac8b3ca70bfbcb11a2feffb615bf7f0965deb36c84f33db54564f46ff7a8fcb7"
+    username: "{cipher}48288992cca2d6621b720580e8b871248543ef24bbd959a287db43224afafa48"
+    password: "{cipher}48288992cca2d6621b720580e8b871248543ef24bbd959a287db43224afafa48"
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8071/eureka/
+
+info:
+  app:
+    name: "auction"
+    description: "auction microservice"
+    version: "1.0.0"

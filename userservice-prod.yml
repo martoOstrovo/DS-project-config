@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: "{cipher}fd8517d47a9f75f169fe1a5b8044a01a9322b3b529d3e177714b783dd7ebd9a4"
+    username: "{cipher}48288992cca2d6621b720580e8b871248543ef24bbd959a287db43224afafa48"
+    password: "{cipher}48288992cca2d6621b720580e8b871248543ef24bbd959a287db43224afafa48"
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8071/eureka/
+
+info:
+  app:
+    name: "user"
+    description: "user microservice"
+    version: "1.0.0"
